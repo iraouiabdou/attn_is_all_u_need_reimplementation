@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pt
+tokenizer_*.json
+wmt_*_weights/
+.ipynb_checkpoints/
