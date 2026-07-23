@@ -34,14 +34,12 @@ batches) to cut padding waste. 10 epochs take ~30 min total on a single GPU
   (norm inside the residual branch, plus final LNs after the encoder and
   decoder stacks) trained smoothly on the first try with the same
   hyperparameters — that run is [`logs/preln_training.txt`](logs/preln_training.txt).
-- **Shared 32k WordPiece vocab** (HuggingFace `tokenizers`) instead of the
-  paper's BPE, trained on the sampled training pairs.
 - **Data**: 1M pairs streamed + shuffled from `wmt/wmt14 fr-en` (the full set is
   ~40.8M), with some filtering: empty/identical pairs, pairs longer than
   `max_seq=300`, and pairs with a src/tgt length ratio > 2.5 are dropped
   (~33k pairs removed).
 - Single GPU, 10 epochs — nowhere near the paper's compute, so scores are not
-  comparable to the paper's BLEU 38+.
+  comparable to the paper's BLEU 41+.
 
 ## Results
 
